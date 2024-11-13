@@ -4,11 +4,12 @@ import AddTodo from "./AddTodo";
 
 const fetchTodos = () => {
   return [
-    { id: 1, text: "eat breakfast.", status: false },
-    { id: 2, text: "iron clothes", status: false },
-    { id: 3, text: "go to gym", status: true },
-    { id: 4, text: "do coding", status: false },
-    { id: 5, text: "go to sleep", status: false },
+    "eat breakfast.",
+    "iron clothes",
+    "go to gym",
+    "do coding",
+    "go to sleep",
+    "go to sleep",
   ];
 };
 
@@ -16,16 +17,7 @@ export default function TodoList() {
   const [todos, setTodos] = useState(fetchTodos());
 
   const handleAddTodo = (todoItem) => {
-    const todo = { id: todos.length + 1, text: todoItem, status: false };
-    setTodos((prevTodos) => [...prevTodos, todo]);
-  };
-
-  const toggleStatus = (id) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, status: !todo.status } : todo,
-      ),
-    );
+    setTodos((prevTodos) => [...prevTodos, todoItem]);
   };
 
   return (
@@ -33,7 +25,7 @@ export default function TodoList() {
       <AddTodo handleAddTodo={handleAddTodo} />
       <ul>
         {todos.map((todo, index) => (
-          <Todo key={index} todo={todo} toggleStatus={toggleStatus} />
+          <Todo key={index} todo={todo} />
         ))}
       </ul>
     </>
