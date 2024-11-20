@@ -16,23 +16,24 @@ export default function TodoList() {
   const [todos, setTodos] = useState(fetchTodos());
 
   const handleAddTodo = (todoItem) => {
-    setTodos((prevTodos) => [...prevTodos, todoItem]);
+    const todo = { id: todos.length + 1, text: todoItem, done: false };
+    setTodos((prevTodos) => [...prevTodos, todo]);
   };
 
   const toggleTodoStatus = (id) => {
     setTodos((prevTodo) =>
-      prevTodo.map((t) => (t.id === id ? { ...t, done: !t.done } : { ...t })),
+      prevTodo.map((t) => (t.id === id ? { ...t, done: !t.done } : { ...t }))
     );
   };
 
   return (
-    <>
+    <div className="mx-auto">
       <AddTodo handleAddTodo={handleAddTodo} />
-      <ul>
+      <ul className=" m-0 mx-auto text-center">
         {todos.map((todo, index) => (
           <Todo key={index} todo={todo} toggle={toggleTodoStatus} />
         ))}
       </ul>
-    </>
+    </div>
   );
 }
