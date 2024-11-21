@@ -3,7 +3,7 @@ export default function Todo({ todo, toggle }) {
   const { id, text, done } = todo;
   console.log(todo);
   return (
-    <div className="flex items-center justify-center">
+    <div className=" pb-3 flex items-center justify-center">
       <li onClick={() => toggle(id)}>
         {done && <strike>{text}</strike>}
         {!done && text}

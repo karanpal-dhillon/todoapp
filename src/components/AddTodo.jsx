@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function AddTodo({ handleAddTodo }) {
   const [todoItem, setTodoItem] = useState("");
   return (
-    <div className=" min-h-screen flex items-center justify-center">
+    <div className="container mx-auto my-5 rounded-xl pt-44  flex items-center justify-center ">
       <input
         type="text"
         placeholder="Enter todo"
@@ -11,7 +11,7 @@ export default function AddTodo({ handleAddTodo }) {
         onChange={(event) => {
           setTodoItem(event.target.value);
         }}
-        className="bg-teal-800 text-center text-white text-base p-2 rounded-xl"
+        className="bg-gray-800 text-center text-white text-base p-2 rounded-xl"
       />
 
       <button

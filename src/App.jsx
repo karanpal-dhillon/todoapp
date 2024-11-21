@@ -6,7 +6,7 @@ function App() {
   return (
     <main className="bg-slate-500 ">
       <Header />
-      <TodoList />
+      <TodoList className="mx-auto min-h-screen flex items-center justify-center" />
       <Footer />
     </main>
   );

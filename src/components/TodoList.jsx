@@ -29,7 +29,7 @@ export default function TodoList() {
   return (
     <div className="mx-auto">
       <AddTodo handleAddTodo={handleAddTodo} />
-      <ul className=" m-0 mx-auto text-center">
+      <ul className=" mt-1  pb-24 mx-auto ">
         {todos.map((todo, index) => (
           <Todo key={index} todo={todo} toggle={toggleTodoStatus} />
         ))}
